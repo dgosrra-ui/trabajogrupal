@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "escuela.h"        
 
 int main() {
     int numAlumnos, numMaterias;
@@ -9,7 +10,7 @@ int main() {
     
     numMaterias = 3;
     float calificaciones[numAlumnos][numMaterias];
-    
+    // Ingreso de calificaciones
     
     for (int i = 0; i < numAlumnos; i++) {
         for (int j = 0; j < numMaterias; j++) {
@@ -17,7 +18,7 @@ int main() {
             scanf("%f", &calificaciones[i][j]);
         }
     }
-           
+     //calculo de calificaciones mas alta y mas baja      
     printf("\nCalificaciones mas alta :\n");
     for (int i = 0; i < numAlumnos; i++) {
         float maxCalificacion = calificaciones[i][0];
@@ -37,6 +38,12 @@ int main() {
             }
         }
         printf("Alumno %d: %.2f\n", i + 1, minCalificacion);
+    }
+    //calculo mediante la funcion <escuela.h>
+    printf("\nPromedio de calificaciones:\n");
+    for (int i = 0; i < numAlumnos; i++) {
+        float promedio = calcularPromedio(calificaciones[i], numMaterias);
+        printf("Alumno %d: %.2f\n", i + 1, promedio);
     }
 
     return 0;
