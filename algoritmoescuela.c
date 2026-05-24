@@ -44,7 +44,11 @@ int main() {
     for (int i = 0; i < numAlumnos; i++) {
         float promedio = calcularPromedio(calificaciones[i], numMaterias);
         printf("Alumno %d: %.2f\n", i + 1, promedio);
+
     }
+    //calculo del promedio total
+    float promedioTotal = calcularPromedioTotal(calificaciones, numAlumnos, numMaterias);
+    printf("\nPromedio total: %.2f\n", promedioTotal);
 
     return 0;
 }
