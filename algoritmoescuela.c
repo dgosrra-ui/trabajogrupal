@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "escuela.h"        
-
-int main() {
+#include "aprobados.h"
+int main(void) {
     int numAlumnos, numMaterias;
     
     printf("Ingrese el número de alumnos: ");
@@ -49,6 +49,13 @@ int main() {
     //calculo del promedio total
     float promedioTotal = calcularPromedioTotal(calificaciones, numAlumnos, numMaterias);
     printf("\nPromedio total: %.2f\n", promedioTotal);
+    //calculo de aprobados y reprobados mediante el uso de la funcion <aprobados.h>
+    printf("\nResultados de los estudiantes:\n");
+    for (int i = 0; i < numAlumnos; i++) {  
+        float promedio = calcularPromedio(calificaciones[i], numMaterias);
+        printf("Alumno %d: ", i + 1);
+        verificarAprobacion(promedio);
+    }
 
     return 0;
 }
