@@ -56,6 +56,27 @@ int main(void) {
         printf("Alumno %d: ", i + 1);
         verificarAprobacion(promedio);
     }
+    printf("\n----------------------------------------------------------------------------------\n");
+ printf("| Alumno | Materia1 | Materia2 | Materia3 | Promedio |\n");
+ printf("----------------------------------------------------------------------------------\n");
+
+ for (int i = 0; i < numAlumnos; i++) {
+
+    float promedio = calcularPromedio(calificaciones[i], numMaterias);
+
+    printf("|   %2d    ", i + 1);
+
+    for (int j = 0; j < numMaterias; j++) {
+        printf("|   %6.2f  ", calificaciones[i][j]);
+    }
+
+    printf("|   %6.2f |\n", promedio);
+
+    printf("----------------------------------------------------------------------------------\n");
+}
+
+ printf("| Promedio Total                                         |   %6.2f |\n", promedioTotal);
+ printf("----------------------------------------------------------------------------------\n");
 
     return 0;
 }
