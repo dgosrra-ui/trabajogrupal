@@ -3,8 +3,14 @@
 
 #include <stdio.h>
 
-int verificarAprobacion(float *promedio) {
-    if (*promedio >= 6) {
+typedef struct {
+    char nombre[50];
+    float calificaciones[3];
+} Alumno;
+
+int verificarAprobacion(Alumno *alumno) {
+    float promedio = calcularPromedio(alumno->calificaciones, 3);
+    if (promedio >= 6) {
         printf("El estudiante aprueba.\n");
     } else {
         printf("El estudiante reprueba.\n");

@@ -3,6 +3,11 @@
 
 #ifndef ESCUELA_H
 #define ESCUELA_H
+typedef struct {
+    int numAlumnos;
+    int numMaterias;
+    float *calificaciones;
+} Escuela;
 
 float calcularPromedio(float *calificaciones, int numMaterias) {
     float suma = 0.0;
