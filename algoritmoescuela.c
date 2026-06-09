@@ -19,10 +19,12 @@ int main(void) {
     
     printf("Ingrese el número de alumnos: ");
     scanf("%d", &numAlumnos);
-    
-    numMaterias = 3;
-    float calificaciones[numAlumnos][numMaterias];
-    float *pCalif = &calificaciones[0][0];
+    //inclusion de estructuras en los punteros
+    algoritmoescuela escuela;
+    escuela.numAlumnos = numAlumnos;
+    escuela.numMaterias = 3;
+    escuela.calificaciones = (float *)malloc(numAlumnos * 3 * sizeof(float));
+    float *pCalif = escuela.calificaciones;
     // Ingreso de calificaciones
     
     for (int i = 0; i < numAlumnos; i++) {
