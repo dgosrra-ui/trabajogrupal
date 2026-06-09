@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include "escuela.h"        
 #include "aprobados.h"
+
+typedef struct algoritmoescuela
+{
+    int numAlumnos;
+    int numMaterias;
+    float *calificaciones;
+} algoritmoescuela;
 int main(void) {
     int numAlumnos, numMaterias;
     
